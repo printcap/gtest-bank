@@ -13,6 +13,7 @@ $ cd obj
 $ cmake ..
 $ make 
 $ make test
+...
 24/24 Test #24: BankAccount.WithdrawInsufficientAmountThrowsException ...   Passed    0.00 sec
 
 100% tests passed, 0 tests failed out of 24

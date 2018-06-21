@@ -1,11 +1,10 @@
-cmake_minimum_required(VERSION 2.8.11)
-set(CMAKE_CXX_STANDARD 11)
+cmake_minimum_required(VERSION 3.5)
 
 enable_testing()
 find_package(GTest REQUIRED)
 
-include(GoogleTest)
 add_executable(bank_test bank_test.cpp account_test.cpp)
+target_compile_features(bank_test PRIVATE cxx_auto_type cxx_variadic_templates)
 target_link_libraries(bank_test GTest::GTest GTest::Main)
 
 gtest_discover_tests(bank_test)

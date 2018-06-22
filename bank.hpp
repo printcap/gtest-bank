@@ -1,5 +1,5 @@
-#ifndef BANK_H
-#define BANK_H
+#ifndef BANK_HPP
+#define BANK_HPP
 
 #include <map>
 #include <sstream>
@@ -7,14 +7,15 @@
 #include <string>
 
 struct AccountException : public std::invalid_argument {
-  AccountException(const std::string& msg) : std::invalid_argument(msg) {}
+  explicit AccountException(const std::string& msg)
+      : std::invalid_argument(msg) {}
 };
 
 template <typename T>
 class BankAccount {
  public:
-  BankAccount(int accountId, const std::string ownerName)
-      : accountId(accountId), ownerName(ownerName), balance(0) {}
+  BankAccount(int accountId, std::string ownerName)
+      : accountId(accountId), ownerName(std::move(ownerName)), balance(0) {}
 
   int getId() const { return accountId; }
   T getBalance() const { return balance; }
@@ -53,7 +54,7 @@ std::ostream& operator<<(std::ostream& s, const BankAccount<T>& account) {
 template <typename T>
 class Bank {
  public:
-  Bank(const std::string name) : name(name), nextAccountId(1) {}
+  explicit Bank(std::string name) : name(std::move(name)), nextAccountId(1) {}
 
   int createNewAccount(const std::string ownerName) {
     int id = nextAccountId++;

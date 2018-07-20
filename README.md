@@ -11,7 +11,7 @@ $ cd <directory-with-this-README.md>
 $ mkdir obj
 $ cd obj
 $ cmake ..
-$ make 
+$ make
 $ make test
 ...
 24/24 Test #24: BankAccount.WithdrawInsufficientAmountThrowsException ...   Passed    0.00 sec

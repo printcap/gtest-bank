@@ -1,5 +1,7 @@
 # Toy Bank in C++ with Google Tests
 
+[![Build Status](https://travis-ci.org/printcap/gtest-bank.svg?branch=master)](https://travis-ci.org/printcap/gtest-bank)
+
 A set trival of C++ classes that implement a simple bank
 and a number of unit tests using [Google Test](https://github.com/google/googletest) for illustration.
 (for students of OOP2 course BTI7055).

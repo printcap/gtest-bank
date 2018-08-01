@@ -32,4 +32,5 @@ install:
 script:
   - CXX=/usr/bin/g++-6 CC=/usr/bin/gcc-6 cmake .
   - cmake --build . -- -j2
+  - ctest
 

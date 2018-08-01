@@ -6,7 +6,7 @@ and a number of unit tests using [Google Test](https://github.com/google/googlet
 
 ## Build Instructions
 
-```text
+```console
 $ cd <directory-with-this-README.md>
 $ mkdir obj
 $ cd obj
